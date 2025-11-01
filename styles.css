@@ -138,42 +138,49 @@ main p {
 
 /*Página Productos*/
 main h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #40494F;
-    margin: 40px 0 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: #40494F;
+  margin: 40px 0 30px;
 }
 
 .productos-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 5%;
 }
 
 .producto {
-    text-align: center;
-    border: 1px solid #649595;
-    border-radius: 8px;
-    padding: 20px;
+  flex: 1 1 250px; 
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #649595;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .producto img {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .producto h3 {
-    color: #40494F;
-    margin-bottom: 10px;
+  color: #40494F;
+  margin-bottom: 10px;
 }
 
 .producto p {
-    color: #333;
-    line-height: 1.5;
+  color: #333;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -190,38 +197,147 @@ main h2 {
 
 /*Página Contacto*/
 main h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #40494F;
-    margin: 40px 0 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: #40494F;
+  margin: 40px 0 20px;
 }
 
 main p {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .form-contacto {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  background-color: #F5F5F5;
+  padding: 40px;
+  border: 1px solid #649595;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
+/* Etiquetas */
 .form-contacto label {
-    font-weight: 600;
-    color: #40494F;
+  font-weight: 600;
+  color: #40494F;
 }
 
-.form-contacto input {
-    padding: 10px;
-    border: 1px solid #649595;
-    border-radius: 5px;
-    font-size: 1rem;
+/* Campos */
+.form-contacto input,
+.form-contacto textarea {
+  padding: 10px;
+  border: 1px solid #649595;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: white;
+  transition: all 0.2s ease;
 }
 
+/* Efecto al escribir */
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #40494F;
+  box-shadow: 0 0 5px rgba(100, 149, 149, 0.4);
+  transform: scale(1.01);
+  outline: none;
+}
+
+/* Botón */
 .form-contacto .cta-button {
-    margin-top: 10px;
+  background-color: #649595;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-contacto .cta-button:hover {
+  background-color: #40494F;
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-contacto {
+    padding: 25px;
+    margin: 20px;
+  }
+}
+
+/* Página Promociones */
+.promociones {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #F5F5F5;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #649595;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.promociones h2 {
+  text-align: center;
+  color: #40494F;
+  margin-bottom: 15px;
+}
+
+.promociones p {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.promociones label {
+  font-weight: bold;
+  color: #40494F;
+  margin-top: 10px;
+  display: block;
+}
+
+.promociones input,
+.promociones select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #649595;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.promociones button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #649595;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.promociones button:hover {
+  background-color: #40494F;
+}
+
+.resultado {
+  margin-top: 25px;
+  background-color: #eaf5f5;
+  border: 1px solid #649595;
+  padding: 15px;
+  border-radius: 5px;
+  color: #333;
+  text-align: center;
 }
